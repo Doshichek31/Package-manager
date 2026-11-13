@@ -59,7 +59,8 @@ class TestNpmClient(unittest.TestCase):
         self.assertEqual(deps, {})
 
     @patch("src.npm_client.fetch_json")
-    def test_get_direct_dependencies(self, mock_fetch: unittest.mock.MagicMock) -> None:
+    def test_get_direct_dependencies(self, 
+                        mock_fetch: unittest.mock.MagicMock) -> None:
         """Test high-level dependency retrieval with mocked network."""
         mock_fetch.return_value = {
             "dependencies": {"debug": "2.6.9"}
